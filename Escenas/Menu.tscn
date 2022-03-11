@@ -1,7 +1,16 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Escenas/Menu.gd" type="Script" id=1]
 [ext_resource path="res://images/Otto.png" type="Texture" id=2]
+[ext_resource path="res://ARIAL.TTF" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 50
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 50
+font_data = ExtResource( 3 )
 
 [node name="Menu" type="Control"]
 anchor_right = 1.0
@@ -17,30 +26,46 @@ __meta__ = {
 
 [node name="Otto" type="Sprite" parent="."]
 show_behind_parent = true
-position = Vector2( 509.5, 308.125 )
+position = Vector2( 510, 308 )
 scale = Vector2( 0.1021, 0.101917 )
 texture = ExtResource( 2 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = -0.5
 anchor_top = 1.0
+anchor_right = 0.408
 anchor_bottom = 1.0
-margin_top = -68.0
-margin_right = 98.0
+margin_left = 799.0
+margin_top = -152.0
+margin_right = 21.208
+margin_bottom = -89.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="BotonInicio" type="Button" parent="VBoxContainer"]
-margin_right = 98.0
-margin_bottom = 20.0
+margin_right = 152.0
+margin_bottom = 63.0
 rect_pivot_offset = Vector2( -303, 58 )
+custom_fonts/font = SubResource( 1 )
 text = "Jugar"
+flat = true
 
-[node name="BotonSalir" type="Button" parent="VBoxContainer"]
-margin_top = 24.0
-margin_right = 98.0
-margin_bottom = 44.0
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+anchor_left = 0.542969
+anchor_top = 0.745
+anchor_right = 0.704102
+anchor_bottom = 0.85
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="BotonSalir" type="Button" parent="VBoxContainer2"]
+margin_right = 165.0
+margin_bottom = 63.0
+custom_fonts/font = SubResource( 2 )
 text = "Salir"
+flat = true
 
 [connection signal="pressed" from="VBoxContainer/BotonInicio" to="." method="_on_BotonInicio_pressed"]
-[connection signal="pressed" from="VBoxContainer/BotonSalir" to="." method="_on_BotonSalir_pressed"]
+[connection signal="pressed" from="VBoxContainer2/BotonSalir" to="." method="_on_BotonSalir_pressed"]
