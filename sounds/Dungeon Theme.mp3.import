@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Dungeon Theme.mp3-db5a5ff3c0829cdd1947e47df8239b9e.mp3str"
+
+[deps]
+
+source_file="res://sounds/Dungeon Theme.mp3"
+dest_files=[ "res://.import/Dungeon Theme.mp3-db5a5ff3c0829cdd1947e47df8239b9e.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
