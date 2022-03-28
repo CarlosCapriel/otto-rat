@@ -17,7 +17,7 @@ func _ready():
 
 
 func _on_BotonInicio_pressed():
-	get_tree().change_scene("res://Escenas/EscenaPrueba.tscn")
+	get_tree().change_scene("res://Escenas/EscenaNivelUno.tscn")
 
 
 func _on_BotonSalir_pressed():
