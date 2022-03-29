@@ -31,6 +31,7 @@ points = PoolVector2Array( 0, 0, 8, 0, 8, 8, 0, 8 )
 0/z_index = 0
 
 [node name="Mundo" type="Node2D"]
+script = ExtResource( 3 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 2 )
@@ -61,26 +62,20 @@ texture = ExtResource( 3 )
 centered = false
 offset = Vector2( 2, 2 )
 
-[node name="Label" type="Label" parent="."]
+[node name="lblOperacion" type="Label" parent="."]
 margin_left = 567.0
 margin_top = 192.0
 margin_right = 611.0
 margin_bottom = 206.0
 rect_pivot_offset = Vector2( 22, 14 )
-text = "3*3="
-__meta__ = {
-"_edit_use_anchors_": false
-}
+script = ExtResource( 4 )
 
-[node name="Label2" type="Label" parent="."]
+[node name="lblResultado" type="Label" parent="."]
 margin_left = 437.0
 margin_top = 486.0
 margin_right = 481.0
 margin_bottom = 500.0
 rect_pivot_offset = Vector2( 22, 14 )
 text = "9"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
