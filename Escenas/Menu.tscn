@@ -20,6 +20,9 @@ margin_top = 4.0
 margin_right = 6.0
 margin_bottom = 4.0
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Otto" type="Sprite" parent="."]
 show_behind_parent = true
