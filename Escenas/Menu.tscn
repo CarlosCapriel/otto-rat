@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Escenas/Menu.gd" type="Script" id=1]
 [ext_resource path="res://images/Otto.png" type="Texture" id=2]
-[ext_resource path="res://ARIAL.TTF" type="DynamicFontData" id=3]
+[ext_resource path="res://Brightly Crush Shine.otf" type="DynamicFontData" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 50
@@ -42,8 +42,9 @@ __meta__ = {
 
 [node name="BotonInicio" type="Button" parent="VBoxContainer"]
 margin_right = 152.0
-margin_bottom = 63.0
+margin_bottom = 81.0
 rect_pivot_offset = Vector2( -303, 58 )
+mouse_default_cursor_shape = 2
 custom_fonts/font = SubResource( 1 )
 text = "Jugar"
 flat = true
@@ -59,7 +60,8 @@ __meta__ = {
 
 [node name="BotonSalir" type="Button" parent="VBoxContainer2"]
 margin_right = 165.0
-margin_bottom = 63.0
+margin_bottom = 81.0
+mouse_default_cursor_shape = 2
 custom_fonts/font = SubResource( 2 )
 text = "Salir"
 flat = true
