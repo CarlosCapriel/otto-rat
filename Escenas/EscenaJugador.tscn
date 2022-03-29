@@ -40,8 +40,7 @@ position = Vector2( -2.99997, -40 )
 scale = Vector2( 0.458, 0.498501 )
 frames = SubResource( 1 )
 animation = "salto"
-frame = 6
-playing = true
+frame = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -15, 6 )

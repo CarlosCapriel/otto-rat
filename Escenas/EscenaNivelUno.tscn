@@ -62,6 +62,18 @@ offset_v = 1.0
 editor_draw_limits = true
 editor_draw_drag_margin = true
 
+[node name="ParallaxBackground" type="ParallaxBackground" parent="KinematicBody2D/Camera2D"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="KinematicBody2D/Camera2D/ParallaxBackground"]
+motion_mirroring = Vector2( 12650, 3130 )
+
+[node name="Sprite" type="Sprite" parent="KinematicBody2D/Camera2D/ParallaxBackground/ParallaxLayer"]
+position = Vector2( -4, -264.435 )
+scale = Vector2( 0.344062, 0.282571 )
+texture = ExtResource( 3 )
+centered = false
+offset = Vector2( -2, -2 )
+
 [node name="lblOperacion" type="Label" parent="."]
 margin_left = 564.0
 margin_top = 92.0
@@ -82,16 +94,3 @@ custom_fonts/font = SubResource( 4 )
 
 [node name="MusicLevel" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
-
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2( 0.2, 1 )
-motion_mirroring = Vector2( 12650, 0 )
-
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2( -605, -70 )
-scale = Vector2( 0.344062, 0.217074 )
-texture = ExtResource( 3 )
-centered = false
-offset = Vector2( -2, -2 )
