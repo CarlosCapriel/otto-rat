@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Escenas/Menu.gd" type="Script" id=1]
 [ext_resource path="res://images/Otto.png" type="Texture" id=2]
 [ext_resource path="res://Brightly Crush Shine.otf" type="DynamicFontData" id=3]
+[ext_resource path="res://sounds/Intro Theme.mp3" type="AudioStream" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 50
@@ -65,6 +66,9 @@ mouse_default_cursor_shape = 2
 custom_fonts/font = SubResource( 2 )
 text = "Salir"
 flat = true
+
+[node name="IntroTheme" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
 
 [connection signal="pressed" from="VBoxContainer/BotonInicio" to="." method="_on_BotonInicio_pressed"]
 [connection signal="pressed" from="VBoxContainer2/BotonSalir" to="." method="_on_BotonSalir_pressed"]
