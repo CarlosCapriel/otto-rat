@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Escenas/EscenaJugador.tscn" type="PackedScene" id=1]
 [ext_resource path="res://images/Tocho.png" type="Texture" id=2]
 [ext_resource path="res://background/jardin/jardinycasa.png" type="Texture" id=3]
 [ext_resource path="res://Escenas/EscenaNivelUno.gd" type="Script" id=4]
+[ext_resource path="res://Brightly Crush Shine.otf" type="DynamicFontData" id=5]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 8, 0, 8, 8, 0, 8 )
@@ -30,6 +31,14 @@ points = PoolVector2Array( 0, 0, 8, 0, 8, 8, 0, 8 )
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 0/z_index = 0
+
+[sub_resource type="DynamicFont" id=3]
+size = 44
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 30
+font_data = ExtResource( 5 )
 
 [node name="Mundo" type="Node2D"]
 script = ExtResource( 4 )
@@ -69,13 +78,15 @@ margin_top = 192.0
 margin_right = 611.0
 margin_bottom = 206.0
 rect_pivot_offset = Vector2( 22, 14 )
+custom_fonts/font = SubResource( 3 )
 
 [node name="lblResultado" type="Label" parent="."]
-margin_left = 437.0
-margin_top = 486.0
-margin_right = 481.0
-margin_bottom = 500.0
+margin_left = 414.0
+margin_top = 476.0
+margin_right = 458.0
+margin_bottom = 521.0
 rect_pivot_offset = Vector2( 22, 14 )
+custom_fonts/font = SubResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
