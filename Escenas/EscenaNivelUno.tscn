@@ -56,6 +56,7 @@ position = Vector2( 84, 473 )
 position = Vector2( 429, -173 )
 current = true
 limit_left = 1
+offset_v = 1.0
 editor_draw_limits = true
 editor_draw_drag_margin = true
 
@@ -73,11 +74,12 @@ centered = false
 offset = Vector2( 2, 2 )
 
 [node name="lblOperacion" type="Label" parent="."]
-margin_left = 567.0
-margin_top = 192.0
-margin_right = 611.0
-margin_bottom = 206.0
+margin_left = 564.0
+margin_top = 92.0
+margin_right = 608.0
+margin_bottom = 157.0
 rect_pivot_offset = Vector2( 22, 14 )
+custom_colors/font_color = Color( 0.886275, 0, 0, 1 )
 custom_fonts/font = SubResource( 3 )
 
 [node name="lblResultado" type="Label" parent="."]
@@ -86,9 +88,7 @@ margin_top = 476.0
 margin_right = 458.0
 margin_bottom = 521.0
 rect_pivot_offset = Vector2( 22, 14 )
+custom_colors/font_color = Color( 0.47451, 0.254902, 0.254902, 1 )
 custom_fonts/font = SubResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
