@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/jardin.png-3a3aa05664640855fa5e30ad933a8564.stex"
+path="res://.import/casa.png-77bd864a224f01b490a94a8a15f730b1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://background/jardin/jardin.png"
-dest_files=[ "res://.import/jardin.png-3a3aa05664640855fa5e30ad933a8564.stex" ]
+source_file="res://background/jardin/casa.png"
+dest_files=[ "res://.import/casa.png-77bd864a224f01b490a94a8a15f730b1.stex" ]
 
 [params]
 
