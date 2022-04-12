@@ -31,7 +31,7 @@ func _physics_process(_delta):
 			animationSprite.play("salto")
 			motion.y = JUMP_H
 		if friction == true:
-			motion.x = lerp(motion.x, 0, 0.5)
+			motion.x = lerp(motion.x, 0, 0.4)
 	else:
 		if friction == true:
 			motion.x = lerp(motion.x, 0, 0.01)
