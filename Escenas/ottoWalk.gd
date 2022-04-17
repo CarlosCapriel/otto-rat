@@ -10,7 +10,7 @@ onready var animationSprite = $AnimatedSprite
  
 var motion = Vector2()
  
-func _physics_process(delta):
+func _physics_process(_delta):
 	# apply gravity to the player
 	motion.y += gravity
 	var friction = false
@@ -28,9 +28,10 @@ func _physics_process(delta):
 	if is_on_floor():
  
 		if Input.is_action_just_pressed("ui_accept"):
+			animationSprite.play("salto")
 			motion.y = JUMP_H
 		if friction == true:
-			motion.x = lerp(motion.x, 0, 0.5)
+			motion.x = lerp(motion.x, 0, 0.4)
 	else:
 		if friction == true:
 			motion.x = lerp(motion.x, 0, 0.01)
