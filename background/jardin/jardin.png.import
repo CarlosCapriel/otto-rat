@@ -2,15 +2,19 @@
 
 importer="texture"
 type="StreamTexture"
+
 path="res://.import/jardin.png-3a3aa05664640855fa5e30ad933a8564.stex"
+
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
+
 source_file="res://background/jardin/jardin.png"
 dest_files=[ "res://.import/jardin.png-3a3aa05664640855fa5e30ad933a8564.stex" ]
+
 
 [params]
 
