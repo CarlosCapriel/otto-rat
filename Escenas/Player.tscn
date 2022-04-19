@@ -1,0 +1,44 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://sprites/SpriteCaminar/caminar7.png" type="Texture" id=1]
+[ext_resource path="res://sprites/SpriteCaminar/caminar2.png" type="Texture" id=2]
+[ext_resource path="res://sprites/SpriteCaminar/caminar5.png" type="Texture" id=3]
+[ext_resource path="res://sprites/SpriteCaminar/caminar6.png" type="Texture" id=4]
+[ext_resource path="res://sprites/SpriteCaminar/caminar4.png" type="Texture" id=5]
+[ext_resource path="res://sprites/SpriteCaminar/caminar3.png" type="Texture" id=6]
+[ext_resource path="res://sprites/SpriteCaminar/caminar1.png" type="Texture" id=7]
+[ext_resource path="res://Escenas/PlayerWalk.gd" type="Script" id=8]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 7 ), ExtResource( 2 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "caminar",
+"speed": 12.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 76.0
+height = 128.0
+
+[node name="Player" type="Area2D"]
+script = ExtResource( 8 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 411, 138 )
+scale = Vector2( 0.538, 0.563718 )
+frames = SubResource( 1 )
+animation = "caminar"
+frame = 5
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 538, 381 )
+shape = SubResource( 2 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 514, 302 )
+drag_margin_left = 0.22
+drag_margin_right = 0.39
+drag_margin_bottom = 0.55
+editor_draw_drag_margin = true
