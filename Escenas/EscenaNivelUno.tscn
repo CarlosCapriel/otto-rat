@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Escenas/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Escenas/piedras.tscn" type="PackedScene" id=2]
 [ext_resource path="res://background/jardin/jardin.png" type="Texture" id=3]
+[ext_resource path="res://Escenas/PierdraIn.tscn" type="PackedScene" id=4]
 [ext_resource path="res://sounds/Mushroom Theme.mp3" type="AudioStream" id=6]
 
 [sub_resource type="GDScript" id=1]
@@ -17,23 +19,51 @@ script/source = "extends Node2D
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+func _ready():
+	$MusicLevel.play()
 
-
-func _body_entered(body):
-	if body is KinematicBody2D:
-		print (\"perdiste\")
 "
 
 [node name="Mundo" type="Node2D"]
 script = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 1606, 163.25 )
-scale = Vector2( 0.701479, 0.44201 )
+position = Vector2( 1508.44, 163.25 )
+scale = Vector2( 0.658735, 0.44201 )
 texture = ExtResource( 3 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( -3, -3 )
+position = Vector2( -24, 75 )
 
 [node name="MusicLevel" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
+
+[node name="piedra" parent="." instance=ExtResource( 2 )]
+position = Vector2( 34, 178 )
+
+[node name="piedra5" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1506, 178 )
+
+[node name="piedra2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 552, 28 )
+
+[node name="piedra3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 936, 28 )
+
+[node name="piedra4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1080, 180 )
+
+[node name="PierdraIn" parent="." instance=ExtResource( 4 )]
+position = Vector2( 310, 8 )
+
+[node name="PierdraIn2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 502, 158 )
+
+[node name="PierdraIn3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 878, 148 )
+
+[node name="PierdraIn4" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1444, 12 )
+
+[node name="PierdraIn5" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1766, 6 )
