@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/jardin.png-3a3aa05664640855fa5e30ad933a8564.stex"
+path="res://.import/borde_barra.png-3c9c1408c76e27acc90cd2c7fa720d73.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://background/jardin/jardin.png"
-dest_files=[ "res://.import/jardin.png-3a3aa05664640855fa5e30ad933a8564.stex" ]
+source_file="res://img/borde_barra.png"
+dest_files=[ "res://.import/borde_barra.png-3c9c1408c76e27acc90cd2c7fa720d73.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
