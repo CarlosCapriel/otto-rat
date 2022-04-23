@@ -26,12 +26,13 @@ extents = Vector2( 198, 134 )
 script = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
+visible = false
 position = Vector2( 1508.44, 163.25 )
 scale = Vector2( 0.658735, 0.44201 )
 texture = ExtResource( 3 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( -24, 75 )
+position = Vector2( 1, 0 )
 collision_mask = 15
 
 [node name="cerco" type="StaticBody2D" parent="."]
@@ -39,14 +40,14 @@ collision_layer = 8
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="cerco"]
-position = Vector2( 1505.75, 188 )
+position = Vector2( 1509, 104 )
 shape = SubResource( 3 )
 
 [node name="MusicLevel" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
 
 [node name="piedra" parent="." instance=ExtResource( 2 )]
-position = Vector2( 34, 178 )
+position = Vector2( 40, 150 )
 collision_layer = 4
 collision_mask = 2
 
@@ -66,7 +67,7 @@ position = Vector2( 1506, 178 )
 position = Vector2( 310, 8 )
 
 [node name="PierdraIn2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 514, 158 )
+position = Vector2( 523, 94 )
 
 [node name="PierdraIn3" parent="." instance=ExtResource( 4 )]
 position = Vector2( 878, 148 )
@@ -78,6 +79,7 @@ position = Vector2( 1444, 12 )
 position = Vector2( 1766, 6 )
 
 [node name="casita" type="Area2D" parent="."]
+position = Vector2( 3, -3 )
 script = ExtResource( 7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="casita"]
