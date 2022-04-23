@@ -11,7 +11,9 @@ radius = 46.1736
 size = 45
 font_data = ExtResource( 3 )
 
-[node name="PierdraIn" type="Area2D"]
+[node name="PierdraIn" type="KinematicBody2D"]
+collision_layer = 4
+collision_mask = 2
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
