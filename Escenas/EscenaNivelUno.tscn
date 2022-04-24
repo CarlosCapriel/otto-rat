@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Escenas/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Escenas/piedras.tscn" type="PackedScene" id=2]
-[ext_resource path="res://background/jardin/jardin.png" type="Texture" id=3]
+[ext_resource path="res://background/jardin/jardinX.png" type="Texture" id=3]
 [ext_resource path="res://Escenas/PierdraIn.tscn" type="PackedScene" id=4]
 [ext_resource path="res://background/jardin/casa.png" type="Texture" id=5]
 [ext_resource path="res://sounds/Mushroom Theme.mp3" type="AudioStream" id=6]
@@ -26,13 +26,12 @@ extents = Vector2( 198, 134 )
 script = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-visible = false
-position = Vector2( 1508.44, 163.25 )
-scale = Vector2( 0.658735, 0.44201 )
+position = Vector2( 1494, 578 )
+scale = Vector2( 0.671632, 0.760513 )
 texture = ExtResource( 3 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1, 0 )
+position = Vector2( 47, 657 )
 collision_mask = 15
 
 [node name="cerco" type="StaticBody2D" parent="."]
@@ -47,48 +46,48 @@ shape = SubResource( 3 )
 stream = ExtResource( 6 )
 
 [node name="piedra" parent="." instance=ExtResource( 2 )]
-position = Vector2( 40, 150 )
+position = Vector2( -59, 788 )
 collision_layer = 4
 collision_mask = 2
 
 [node name="piedra2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 552, 28 )
+position = Vector2( 442, 618 )
 
 [node name="piedra3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 936, 28 )
+position = Vector2( 874, 601 )
 
 [node name="piedra4" parent="." instance=ExtResource( 2 )]
-position = Vector2( 1080, 180 )
+position = Vector2( 1254, 802 )
 
 [node name="piedra5" parent="." instance=ExtResource( 2 )]
-position = Vector2( 1506, 178 )
+position = Vector2( 1829, 838 )
 
 [node name="PierdraIn" parent="." groups=["enemy"] instance=ExtResource( 4 )]
-position = Vector2( 310, 8 )
+position = Vector2( 224, 586 )
 
 [node name="PierdraIn2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 523, 94 )
+position = Vector2( 473, 773 )
 
 [node name="PierdraIn3" parent="." instance=ExtResource( 4 )]
-position = Vector2( 878, 148 )
+position = Vector2( 940, 762 )
 
 [node name="PierdraIn4" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1444, 12 )
+position = Vector2( 1555, 590 )
 
 [node name="PierdraIn5" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1766, 6 )
+position = Vector2( 2104, 598 )
 
 [node name="casita" type="Area2D" parent="."]
 position = Vector2( 3, -3 )
 script = ExtResource( 7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="casita"]
-position = Vector2( 2811, 526 )
+position = Vector2( 2946, 1020 )
 shape = SubResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="casita"]
-position = Vector2( 1501, 154 )
-scale = Vector2( 0.662705, 0.467131 )
+position = Vector2( 1514, 690 )
+scale = Vector2( 0.662349, 0.529438 )
 texture = ExtResource( 5 )
 
 [node name="BarraVida" parent="." instance=ExtResource( 8 )]
