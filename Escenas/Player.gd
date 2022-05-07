@@ -55,6 +55,6 @@ func damage_player(damage):
 	health -= damage
 
 func _on_Vida_area_entered(area):
-	if area.get_parent().is_in_group("enemy"):
-		damage_player(area.get_parent().damage)
+	if area.is_in_group("enemy"):
+		damage_player(area.damage)
 	pass # Replace with function body.

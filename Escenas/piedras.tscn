@@ -56,9 +56,6 @@ margin_bottom = 451.0
 custom_colors/font_color = Color( 0.921569, 0.0862745, 0.0862745, 1 )
 custom_fonts/font = SubResource( 3 )
 script = SubResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="lblOperacion" type="Label" parent="."]
 margin_left = 297.0
