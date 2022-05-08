@@ -25,9 +25,6 @@ margin_left = -2.0
 margin_right = 6.0
 margin_bottom = 4.0
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Otto" type="Sprite" parent="."]
 show_behind_parent = true
@@ -44,9 +41,6 @@ margin_left = 799.0
 margin_top = -152.0
 margin_right = 21.208
 margin_bottom = -89.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="BotonInicio" type="Button" parent="VBoxContainer"]
 margin_right = 159.0
