@@ -57,4 +57,5 @@ func damage_player(damage):
 func _on_Vida_area_entered(area):
 	if area.is_in_group("enemy"):
 		damage_player(area.damage)
-	pass # Replace with function body.
+	if health <=0:
+		get_tree().change_scene("res://Escenas/GameOver.tscn")
