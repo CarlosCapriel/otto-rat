@@ -1,9 +1,9 @@
-extends Area2D
+extends Node2D
 
 func _ready():
+	$MusicLevel.play()
 	randomize()
 	generateRandomOperation(4)
-	connect("area_entered",self, "desaparecer")# Replace with function body.
 
 func generateRandomOperation(dificulty):
 	var number1 = 0
@@ -41,6 +41,3 @@ func generateRandomOperator(dificulty):
 			return operators[randi() % 3]
 		10:
 			return operators[randi() % 4]
-
-func desaparecer(object):
-	queue_free()
