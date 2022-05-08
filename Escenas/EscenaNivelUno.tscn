@@ -14,6 +14,10 @@ script/source = "extends Node2D
 
 func _ready():
 	$MusicLevel.play()
+
+
+func _on_casita_body_entered(body):
+	get_tree().change_scene(\"res://Escenas/EscenaNivelDos.tscn\")
 "
 
 [sub_resource type="RectangleShape2D" id=3]
@@ -26,7 +30,7 @@ extents = Vector2( 148, 173 )
 script = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 1494, 578 )
+position = Vector2( 1423, 588 )
 scale = Vector2( 0.671632, 0.760513 )
 texture = ExtResource( 3 )
 
@@ -91,21 +95,23 @@ position = Vector2( 2238, 854 )
 position = Vector2( 1684, 879 )
 
 [node name="PierdraIn8" parent="." instance=ExtResource( 4 )]
-position = Vector2( 2522, 926 )
+position = Vector2( 2376, 961 )
 
 [node name="casita" type="Area2D" parent="."]
 position = Vector2( 3, -3 )
 script = ExtResource( 7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="casita"]
-position = Vector2( 2980, 1064 )
+position = Vector2( 2894, 1210 )
 rotation = 0.649919
 shape = SubResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="casita"]
-position = Vector2( 1514, 690 )
+position = Vector2( 1438, 851 )
 scale = Vector2( 0.662349, 0.529438 )
 texture = ExtResource( 5 )
 
 [node name="BarraVida" parent="." instance=ExtResource( 8 )]
 player_node = NodePath("../Player")
+
+[connection signal="body_entered" from="casita" to="." method="_on_casita_body_entered"]

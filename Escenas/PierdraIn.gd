@@ -1,6 +1,6 @@
 extends Area2D
 
-export (int) var damage = 10
+export (int) var damage = 20
 
 func _ready():
 	randomize()

@@ -15,7 +15,7 @@ __meta__ = {
 
 [node name="Food" type="Sprite" parent="."]
 position = Vector2( 373, 341 )
-scale = Vector2( 1.8, 1.8 )
+scale = Vector2( 1.7, 1.7 )
 z_index = 2
 texture = ExtResource( 1 )
 hframes = 6
