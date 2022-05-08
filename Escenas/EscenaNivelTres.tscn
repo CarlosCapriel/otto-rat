@@ -1,0 +1,56 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Escenas/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://sprites/RockBG.png" type="Texture" id=2]
+[ext_resource path="res://sprites/cavernopening.png" type="Texture" id=3]
+[ext_resource path="res://sounds/Mushroom Theme.mp3" type="AudioStream" id=6]
+[ext_resource path="res://Escenas/casita.gd" type="Script" id=7]
+[ext_resource path="res://Escenas/BarraVida.tscn" type="PackedScene" id=8]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Node2D
+
+func _ready():
+	$MusicLevel.play()
+"
+
+[sub_resource type="ShaderMaterial" id=3]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 114.795, 134 )
+
+[node name="Mundo" type="Node2D"]
+script = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+material = SubResource( 3 )
+position = Vector2( 1531.38, 146.642 )
+scale = Vector2( 48.3813, 16.1644 )
+texture = ExtResource( 2 )
+hframes = 6
+vframes = 5
+frame = 11
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 11, 4 )
+collision_mask = 15
+
+[node name="MusicLevel" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+
+[node name="puerta" type="Area2D" parent="."]
+position = Vector2( 3, -3 )
+script = ExtResource( 7 )
+
+[node name="Sprite" type="Sprite" parent="puerta"]
+position = Vector2( 2753, 208 )
+scale = Vector2( 3.05796, 2.13344 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="puerta"]
+position = Vector2( 2768, 177 )
+rotation = 0.110767
+shape = SubResource( 2 )
+
+[node name="BarraVida" parent="." instance=ExtResource( 8 )]
+player_node = NodePath("../Player")

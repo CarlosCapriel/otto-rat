@@ -14,81 +14,104 @@ script/source = "extends Node2D
 
 func _ready():
 	$MusicLevel.play()
+
+
+func _on_casita_body_entered(body):
+	get_tree().change_scene(\"res://Escenas/EscenaNivelDos.tscn\")
 "
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 1505.25, 102 )
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 198, 134 )
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 148, 173 )
 
 [node name="Mundo" type="Node2D"]
 script = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 1494, 578 )
+position = Vector2( 1423, 588 )
 scale = Vector2( 0.671632, 0.760513 )
 texture = ExtResource( 3 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 47, 657 )
+collision_layer = 2
 collision_mask = 15
 
 [node name="cerco" type="StaticBody2D" parent="."]
 collision_layer = 8
-collision_mask = 0
+collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="cerco"]
-position = Vector2( 1509, 104 )
+position = Vector2( 1469, 733 )
 shape = SubResource( 3 )
 
 [node name="MusicLevel" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
 
 [node name="piedra" parent="." instance=ExtResource( 2 )]
-position = Vector2( -59, 788 )
+position = Vector2( -125, 925 )
 collision_layer = 4
 collision_mask = 2
 
 [node name="piedra2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 442, 618 )
+position = Vector2( 462, 693 )
 
 [node name="piedra3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 874, 601 )
+position = Vector2( 714, 933 )
 
 [node name="piedra4" parent="." instance=ExtResource( 2 )]
-position = Vector2( 1254, 802 )
+position = Vector2( 1064, 656 )
 
 [node name="piedra5" parent="." instance=ExtResource( 2 )]
-position = Vector2( 1829, 838 )
+position = Vector2( 1094, 926 )
+
+[node name="piedra6" parent="." instance=ExtResource( 2 )]
+position = Vector2( 2169, 676 )
+
+[node name="piedra7" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1577, 634 )
 
 [node name="PierdraIn" parent="." instance=ExtResource( 4 )]
-position = Vector2( 224, 586 )
+position = Vector2( 49, 592 )
 
 [node name="PierdraIn2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 473, 773 )
+position = Vector2( 939, 678 )
 
 [node name="PierdraIn3" parent="." instance=ExtResource( 4 )]
-position = Vector2( 940, 762 )
+position = Vector2( 1177, 737 )
 
 [node name="PierdraIn4" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1555, 590 )
+position = Vector2( 337, 833 )
 
 [node name="PierdraIn5" parent="." instance=ExtResource( 4 )]
-position = Vector2( 2104, 598 )
+position = Vector2( 1960, 830 )
+
+[node name="PierdraIn6" parent="." instance=ExtResource( 4 )]
+position = Vector2( 2238, 854 )
+
+[node name="PierdraIn7" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1684, 879 )
+
+[node name="PierdraIn8" parent="." instance=ExtResource( 4 )]
+position = Vector2( 2376, 961 )
 
 [node name="casita" type="Area2D" parent="."]
 position = Vector2( 3, -3 )
 script = ExtResource( 7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="casita"]
-position = Vector2( 2946, 1020 )
-shape = SubResource( 2 )
+position = Vector2( 2894, 1210 )
+rotation = 0.649919
+shape = SubResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="casita"]
-position = Vector2( 1514, 690 )
+position = Vector2( 1438, 851 )
 scale = Vector2( 0.662349, 0.529438 )
 texture = ExtResource( 5 )
 
 [node name="BarraVida" parent="." instance=ExtResource( 8 )]
 player_node = NodePath("../Player")
+
+[connection signal="body_entered" from="casita" to="." method="_on_casita_body_entered"]

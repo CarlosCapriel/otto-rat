@@ -1,6 +1,5 @@
 extends Area2D
 
-
 func _ready():
 	randomize()
 	generateRandomOperation(4)

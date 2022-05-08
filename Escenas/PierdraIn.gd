@@ -14,3 +14,7 @@ func generateRandomOperation(dificulty):
 func generateRandomNumber(dificulty):
 	var number = (randi() % dificulty) + (1 + dificulty)
 	return number 
+
+
+func _on_PierdraIn_body_entered(body):
+	queue_free()

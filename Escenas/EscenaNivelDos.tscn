@@ -1,10 +1,88 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://images/Tocho.png" type="Texture" id=1]
+[ext_resource path="res://Escenas/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Escenas/queso.tscn" type="PackedScene" id=2]
+[ext_resource path="res://background/cocina/cocina.png" type="Texture" id=3]
+[ext_resource path="res://background/cocina/puertaCocina.png" type="Texture" id=4]
+[ext_resource path="res://Escenas/puerta.gd" type="Script" id=5]
+[ext_resource path="res://sounds/Mushroom Theme.mp3" type="AudioStream" id=6]
+[ext_resource path="res://Escenas/BarraVida.tscn" type="PackedScene" id=8]
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="GDScript" id=1]
+script/source = "extends Node2D
+
+func _ready():
+	$MusicLevel.play()
+
+
+func _on_puerta_body_entered(body):
+	get_tree().change_scene(\"res://Escenas/EscenaNivelTres.tscn\")
+"
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 45.0625, 307.5 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 90.4687, 173 )
+
+[node name="Mundo" type="Node2D"]
+script = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 883.5, 448.5 )
-scale = Vector2( 221.875, 113.125 )
-texture = ExtResource( 1 )
+position = Vector2( 720.5, 380.501 )
+scale = Vector2( 0.930857, 1.09286 )
+texture = ExtResource( 3 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( -11.0001, 120.001 )
+collision_layer = 2
+collision_mask = 15
+
+[node name="cerco" type="StaticBody2D" parent="."]
+position = Vector2( -21.0001, 21.001 )
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cerco"]
+position = Vector2( -31, 435 )
+shape = SubResource( 3 )
+
+[node name="queso" parent="." instance=ExtResource( 2 )]
+position = Vector2( 45.9999, 17.001 )
+
+[node name="queso3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 677, 117.001 )
+
+[node name="queso4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 401, 118.001 )
+
+[node name="queso2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 303, 353.001 )
+
+[node name="queso5" parent="." instance=ExtResource( 2 )]
+position = Vector2( 831, 396.001 )
+
+[node name="queso6" parent="." instance=ExtResource( 2 )]
+position = Vector2( -29.0001, 392.001 )
+
+[node name="MusicLevel" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+
+[node name="puerta" type="Area2D" parent="."]
+position = Vector2( -18.0001, 18.001 )
+script = ExtResource( 5 )
+
+[node name="Sprite" type="Sprite" parent="puerta"]
+position = Vector2( 769.25, 363.5 )
+scale = Vector2( 0.221929, 0.2725 )
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="puerta"]
+position = Vector2( 1477, 525 )
+rotation = 0.211859
+shape = SubResource( 4 )
+
+[node name="BarraVida" parent="." instance=ExtResource( 8 )]
+player_node = NodePath("../Player")
+
+[connection signal="body_entered" from="puerta" to="." method="_on_puerta_body_entered"]

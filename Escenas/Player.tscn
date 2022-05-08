@@ -19,27 +19,27 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 6 ), ExtResource( 2 ), ExtResource( 7 ), ExtResource( 1 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 3 ) ],
-"loop": true,
-"name": "correr",
-"speed": 15.0
-}, {
 "frames": [ ExtResource( 13 ), ExtResource( 12 ), ExtResource( 11 ), ExtResource( 14 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 15 ) ],
 "loop": true,
 "name": "salto",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 2 ), ExtResource( 7 ), ExtResource( 1 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "correr",
+"speed": 15.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=2]
-radius = 55.0
-height = 128.0
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 46.5, 115.25 )
 
-[sub_resource type="CapsuleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 8.3279, 18.6889 )
 
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 4, -5 )
-collision_layer = 2
-collision_mask = 13
+collision_layer = 0
+collision_mask = 0
 script = ExtResource( 8 )
 Velocidad = 400
 
@@ -51,11 +51,11 @@ animation = "salto"
 centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 100, 466 )
+position = Vector2( 103.5, 471.25 )
 shape = SubResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 512, 300 )
+position = Vector2( 510, 314 )
 current = true
 drag_margin_v_enabled = true
 
@@ -80,7 +80,8 @@ collision_layer = 2
 collision_mask = 15
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Vida"]
-position = Vector2( -18.3401, 19.7185 )
+position = Vector2( -18.8079, 20.8074 )
+scale = Vector2( 1, 1 )
 shape = SubResource( 3 )
 
 [connection signal="area_entered" from="Vida" to="." method="_on_Vida_area_entered"]
