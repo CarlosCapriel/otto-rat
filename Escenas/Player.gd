@@ -59,5 +59,3 @@ func _on_Vida_area_entered(area):
 		damage_player(area.damage)
 	if health <=0:
 		get_tree().change_scene("res://Escenas/GameOver.tscn")
-	
-	
