@@ -1,75 +1,10 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://Escenas/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Escenas/queso.tscn" type="PackedScene" id=2]
-[ext_resource path="res://background/cocina/puertaCocina.png" type="Texture" id=3]
-[ext_resource path="res://background/cocina/cocina.png" type="Texture" id=5]
-[ext_resource path="res://sounds/Mushroom Theme.mp3" type="AudioStream" id=6]
-[ext_resource path="res://Escenas/casita.gd" type="Script" id=7]
-[ext_resource path="res://Escenas/BarraVida.tscn" type="PackedScene" id=8]
+[ext_resource path="res://images/Tocho.png" type="Texture" id=1]
 
-[sub_resource type="GDScript" id=1]
-script/source = "extends Node2D
-
-func _ready():
-	$MusicLevel.play()
-"
-
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 114.795, 134 )
-
-[node name="Mundo" type="Node2D"]
-script = SubResource( 1 )
+[node name="Node2D" type="Node2D"]
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 1417, 86 )
-scale = Vector2( 1.80382, 1.78311 )
-texture = ExtResource( 5 )
-
-[node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 11, 4 )
-collision_mask = 15
-
-[node name="MusicLevel" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 6 )
-
-[node name="puerta" type="Area2D" parent="."]
-position = Vector2( 3, -3 )
-script = ExtResource( 7 )
-
-[node name="Sprite" type="Sprite" parent="puerta"]
-position = Vector2( 1413, 95 )
-scale = Vector2( 0.450603, 0.450433 )
-texture = ExtResource( 3 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="puerta"]
-position = Vector2( 2804, 500 )
-rotation = 0.110767
-shape = SubResource( 2 )
-
-[node name="BarraVida" parent="." instance=ExtResource( 8 )]
-player_node = NodePath("../Player")
-
-[node name="queso" parent="." instance=ExtResource( 2 )]
-position = Vector2( 157, 290 )
-
-[node name="queso2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 452, -288 )
-
-[node name="queso3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 709, -127 )
-
-[node name="queso4" parent="." instance=ExtResource( 2 )]
-position = Vector2( 1153, -114 )
-
-[node name="queso5" parent="." instance=ExtResource( 2 )]
-position = Vector2( 1697, -118 )
-
-[node name="queso6" parent="." instance=ExtResource( 2 )]
-position = Vector2( 955, 255 )
-
-[node name="queso7" parent="." instance=ExtResource( 2 )]
-position = Vector2( 2127, 219 )
-
-[node name="queso8" parent="." instance=ExtResource( 2 )]
-position = Vector2( 1849, 326 )
+position = Vector2( 883.5, 448.5 )
+scale = Vector2( 221.875, 113.125 )
+texture = ExtResource( 1 )
