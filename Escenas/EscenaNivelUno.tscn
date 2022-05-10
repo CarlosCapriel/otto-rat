@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Escenas/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Escenas/piedras.tscn" type="PackedScene" id=2]
@@ -17,8 +17,24 @@ func _ready():
 
 
 func _on_casita_body_entered(body):
-	get_tree().change_scene(\"res://Escenas/EscenaNivelDos.tscn\")
+	get_tree().change_scene(\"res://Escenas/EscenaNivelDosT.tscn\")
 "
+
+[sub_resource type="Shader" id=5]
+code = "shader_type canvas_item;
+
+uniform float scroll_speed;
+
+void fragment(){
+	vec2 shifteduv = UV;
+	shifteduv.x += TIME * scroll_speed;
+	vec4 color = texture(TEXTURE,shifteduv);
+	COLOR = color;
+}"
+
+[sub_resource type="ShaderMaterial" id=6]
+shader = SubResource( 5 )
+shader_param/scroll_speed = 0.1
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 1505.25, 102 )
@@ -30,12 +46,13 @@ extents = Vector2( 148, 173 )
 script = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 1423, 588 )
-scale = Vector2( 0.671632, 0.760513 )
+material = SubResource( 6 )
+position = Vector2( 1312, 727 )
+scale = Vector2( 0.724206, 0.63745 )
 texture = ExtResource( 3 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 47, 657 )
+position = Vector2( -241, 813 )
 collision_layer = 2
 collision_mask = 15
 
@@ -44,71 +61,68 @@ collision_layer = 8
 collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="cerco"]
-position = Vector2( 1469, 733 )
+position = Vector2( 1454, 733 )
 shape = SubResource( 3 )
 
 [node name="MusicLevel" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
 
 [node name="piedra" parent="." instance=ExtResource( 2 )]
-position = Vector2( -125, 925 )
+position = Vector2( -140, 937 )
 collision_layer = 4
 collision_mask = 2
 
 [node name="piedra2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 462, 693 )
+position = Vector2( 450, 717 )
 
 [node name="piedra3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 714, 933 )
+position = Vector2( 732, 945 )
 
 [node name="piedra4" parent="." instance=ExtResource( 2 )]
-position = Vector2( 1064, 656 )
+position = Vector2( 1157, 719 )
 
 [node name="piedra5" parent="." instance=ExtResource( 2 )]
-position = Vector2( 1094, 926 )
+position = Vector2( 1454, 923 )
 
 [node name="piedra6" parent="." instance=ExtResource( 2 )]
-position = Vector2( 2169, 676 )
+position = Vector2( 2115, 925 )
 
 [node name="piedra7" parent="." instance=ExtResource( 2 )]
-position = Vector2( 1577, 634 )
+position = Vector2( 1820, 766 )
 
 [node name="PierdraIn" parent="." instance=ExtResource( 4 )]
-position = Vector2( 49, 592 )
+position = Vector2( 169, 691 )
 
 [node name="PierdraIn2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 939, 678 )
+position = Vector2( 927, 702 )
 
 [node name="PierdraIn3" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1177, 737 )
+position = Vector2( 1231, 899 )
 
 [node name="PierdraIn4" parent="." instance=ExtResource( 4 )]
-position = Vector2( 337, 833 )
+position = Vector2( 415, 929 )
 
 [node name="PierdraIn5" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1960, 830 )
+position = Vector2( 1909, 923 )
 
 [node name="PierdraIn6" parent="." instance=ExtResource( 4 )]
-position = Vector2( 2238, 854 )
+position = Vector2( 2208, 671 )
 
 [node name="PierdraIn7" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1684, 879 )
-
-[node name="PierdraIn8" parent="." instance=ExtResource( 4 )]
-position = Vector2( 2376, 961 )
+position = Vector2( 1609, 672 )
 
 [node name="casita" type="Area2D" parent="."]
 position = Vector2( 3, -3 )
 script = ExtResource( 7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="casita"]
-position = Vector2( 2894, 1210 )
+position = Vector2( 2885, 1195 )
 rotation = 0.649919
 shape = SubResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="casita"]
-position = Vector2( 1438, 851 )
-scale = Vector2( 0.662349, 0.529438 )
+position = Vector2( 1445.59, 851 )
+scale = Vector2( 0.665676, 0.529438 )
 texture = ExtResource( 5 )
 
 [node name="BarraVida" parent="." instance=ExtResource( 8 )]

@@ -4,7 +4,7 @@ export (int) var damage = 20
 
 func _ready():
 	randomize()
-	generateRandomOperation(8)
+	generateRandomOperation(10)
 	
 func generateRandomOperation(dificulty):
 	var total = 0

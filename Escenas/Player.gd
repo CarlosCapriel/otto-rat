@@ -35,16 +35,16 @@ func _process(delta):
 		Movimiento = Movimiento.normalized() * Velocidad #normalizar la velocidad
 	
 	position += Movimiento * delta #Actualiza los movimientos
-	#position.x = clamp(position.x, 0, limite.x)
-	#position.y = clamp(position.y, 0, limite.y)
+	#position.x = clamp(position.x, 0, 1024)
+	#position.y = clamp(position.y, 0, 600)
 	
 	if Movimiento.x != 0:
 		$AnimatedSprite.animation = "correr"
 		$AnimatedSprite.flip_h = Movimiento.x < 0
 		$AnimatedSprite.flip_v = false
-	else:
-		_animated_sprite.stop()
-	#elif Movimiento.y != 0:
+	#else:
+		#_animated_sprite.stop()
+	#if Movimiento.y != 0:
 		#$AnimatedSprite.animation = "correr"
 		#$AnimatedSprite.flip_v = Movimiento.y > 0
 

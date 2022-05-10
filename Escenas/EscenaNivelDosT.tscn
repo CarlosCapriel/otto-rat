@@ -1,0 +1,79 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Escenas/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://background/cocina/puertaCocina.png" type="Texture" id=2]
+[ext_resource path="res://background/cocina/cocina.png" type="Texture" id=3]
+[ext_resource path="res://Escenas/queso.tscn" type="PackedScene" id=4]
+[ext_resource path="res://sounds/Mushroom Theme.mp3" type="AudioStream" id=6]
+[ext_resource path="res://Escenas/casita.gd" type="Script" id=7]
+[ext_resource path="res://Escenas/BarraVida.tscn" type="PackedScene" id=8]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Node2D
+
+func _ready():
+	$MusicLevel.play()
+
+
+
+
+
+func _on_puertita_body_entered(body):
+	get_tree().change_scene(\"res://Escenas/EscenaNivelTres.tscn\")
+"
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 123.641, 292.095 )
+
+[node name="Mundo" type="Node2D"]
+script = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 925.5, 652.75 )
+scale = Vector2( 1.45657, 1.84643 )
+texture = ExtResource( 3 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( -286, 735 )
+collision_layer = 2
+collision_mask = 15
+
+[node name="MusicLevel" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+
+[node name="puertita" type="Area2D" parent="."]
+position = Vector2( 6, 129 )
+script = ExtResource( 7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="puertita"]
+position = Vector2( 2062, 801 )
+rotation = 0.130514
+shape = SubResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="puertita"]
+position = Vector2( 672.149, 521.263 )
+scale = Vector2( 0.4411, 0.469474 )
+texture = ExtResource( 2 )
+
+[node name="queso" parent="." instance=ExtResource( 4 )]
+position = Vector2( -195, 850 )
+
+[node name="queso2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 153, 844 )
+
+[node name="queso3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 513, 826 )
+
+[node name="queso4" parent="." instance=ExtResource( 4 )]
+position = Vector2( 879, 823 )
+
+[node name="queso5" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1176, 838 )
+
+[node name="queso6" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1473, 853 )
+
+[node name="BarraVida" parent="." instance=ExtResource( 8 )]
+player_node = NodePath("../Player")
+
+[connection signal="body_entered" from="puertita" to="." method="_on_puertita_body_entered"]
