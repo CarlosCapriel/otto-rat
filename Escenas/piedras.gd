@@ -2,15 +2,18 @@ extends Area2D
 
 func _ready():
 	randomize()
-	generateRandomOperation(4)
+	generateRandomOperation(10)
 	connect("area_entered",self, "desaparecer")# Replace with function body.
 
 func generateRandomOperation(dificulty):
-	var number1 = 0
-	var number2 = 0
+	var number1 = 0.0
+	
+	var number2 = 0.0
+	
 	var operator = ""
-	var total = 0
-
+	var total  = 0.0
+	
+	
 	number1 = generateRandomNumber(dificulty)
 	number2 = generateRandomNumber(dificulty)
 	operator = generateRandomOperator(dificulty)
@@ -25,8 +28,8 @@ func generateRandomOperation(dificulty):
 			total = number1 * number2
 		"/":
 			total = number1 / number2
-
-	$lblResultado.text = str(total)
+	
+	$lblResultado.text = String(total)
 
 func generateRandomNumber(dificulty):
 	var number = (randi() % dificulty) + (1 + dificulty)

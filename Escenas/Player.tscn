@@ -37,25 +37,26 @@ extents = Vector2( 46.5, 115.25 )
 extents = Vector2( 8.3279, 18.6889 )
 
 [node name="Player" type="KinematicBody2D"]
-position = Vector2( 4, -5 )
+position = Vector2( 70, 25 )
 collision_layer = 0
 collision_mask = 0
 script = ExtResource( 8 )
 Velocidad = 400
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( -31, 229 )
+position = Vector2( 65, 210 )
 scale = Vector2( 0.531365, 0.547009 )
 frames = SubResource( 1 )
 animation = "salto"
 centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 103.5, 471.25 )
+position = Vector2( 196, 449 )
 shape = SubResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 510, 314 )
+position = Vector2( 443, 273 )
+scale = Vector2( 2, 0.5 )
 current = true
 drag_margin_v_enabled = true
 
@@ -80,8 +81,7 @@ collision_layer = 2
 collision_mask = 15
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Vida"]
-position = Vector2( -18.8079, 20.8074 )
-scale = Vector2( 1, 1 )
+position = Vector2( 3.8147e-06, 16.6222 )
 shape = SubResource( 3 )
 
 [connection signal="area_entered" from="Vida" to="." method="_on_Vida_area_entered"]

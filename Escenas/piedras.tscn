@@ -38,10 +38,8 @@ size = 50
 font_data = ExtResource( 4 )
 
 [node name="piedra" type="Area2D"]
+position = Vector2( 0, 51 )
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 421.75, 421.75 )
@@ -66,10 +64,10 @@ __meta__ = {
 }
 
 [node name="lblOperacion" type="Label" parent="."]
-margin_left = 316.0
-margin_top = 24.0
-margin_right = 517.0
-margin_bottom = 99.0
+margin_left = 373.0
+margin_top = 105.0
+margin_right = 583.0
+margin_bottom = 180.0
 custom_colors/font_color = Color( 0.0980392, 0.0470588, 0.964706, 1 )
 custom_fonts/font = SubResource( 5 )
 __meta__ = {
