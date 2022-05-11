@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Escenas/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Escenas/piedras.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://sounds/Mushroom Theme.mp3" type="AudioStream" id=6]
 [ext_resource path="res://Escenas/casita.gd" type="Script" id=7]
 [ext_resource path="res://Escenas/BarraVida.tscn" type="PackedScene" id=8]
+[ext_resource path="res://background/cocina/cocina.png" type="Texture" id=9]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
@@ -36,6 +37,22 @@ void fragment(){
 shader = SubResource( 5 )
 shader_param/scroll_speed = 0.1
 
+[sub_resource type="Shader" id=7]
+code = "shader_type canvas_item;
+
+uniform float scroll_speed;
+
+void fragment(){
+	vec2 shifteduv = UV;
+	shifteduv.x += TIME * scroll_speed;
+	vec4 color = texture(TEXTURE,shifteduv);
+	COLOR = color;
+}"
+
+[sub_resource type="ShaderMaterial" id=8]
+shader = SubResource( 7 )
+shader_param/scroll_speed = 0.1
+
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 1505.25, 102 )
 
@@ -47,9 +64,15 @@ script = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 material = SubResource( 6 )
-position = Vector2( 1312, 727 )
-scale = Vector2( 0.724206, 0.63745 )
+position = Vector2( 1376.5, 743.5 )
+scale = Vector2( 0.752464, 0.652058 )
 texture = ExtResource( 3 )
+
+[node name="Spritedob" type="Sprite" parent="."]
+material = SubResource( 8 )
+position = Vector2( 4582, 739 )
+scale = Vector2( 1.69829, 2.10857 )
+texture = ExtResource( 9 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( -241, 813 )
@@ -112,17 +135,17 @@ position = Vector2( 2208, 671 )
 position = Vector2( 1609, 672 )
 
 [node name="casita" type="Area2D" parent="."]
-position = Vector2( 3, -3 )
+position = Vector2( 971, -39 )
 script = ExtResource( 7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="casita"]
-position = Vector2( 2885, 1195 )
+position = Vector2( 1965, 1219 )
 rotation = 0.649919
 shape = SubResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="casita"]
-position = Vector2( 1445.59, 851 )
-scale = Vector2( 0.665676, 0.529438 )
+position = Vector2( 179.5, 895 )
+scale = Vector2( 0.854107, 0.534971 )
 texture = ExtResource( 5 )
 
 [node name="BarraVida" parent="." instance=ExtResource( 8 )]

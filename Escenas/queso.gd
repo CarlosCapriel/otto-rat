@@ -9,7 +9,7 @@ extends Area2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	randomize()
-	generateRandomOperation(10)
+	generateRandomOperation(7)
 	connect("area_entered",self, "desaparecer")
 	#connect("area_entered",self, "desaparecer")#
 func generateRandomOperation(dificulty):
@@ -40,7 +40,7 @@ func generateRandomOperation(dificulty):
 	$Resultado.text = str(total)
 
 func generateRandomNumber(dificulty):
-	var number = (randi() % dificulty) + (1 + dificulty)
+	var number = (randi() % dificulty) + (2 + dificulty)
 	return number 
 
 func generateRandomOperator(dificulty):
