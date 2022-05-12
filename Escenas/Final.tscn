@@ -1,10 +1,12 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Escenas/Menu.gd" type="Script" id=1]
 [ext_resource path="res://background/cocina/140Z_2106.w026.n002.539B.p1.539.jpg" type="Texture" id=2]
 [ext_resource path="res://TIEWING.TTF" type="DynamicFontData" id=3]
 [ext_resource path="res://sounds/Iceland Theme.mp3" type="AudioStream" id=4]
 [ext_resource path="res://Brightly Crush Shine.otf" type="DynamicFontData" id=5]
+[ext_resource path="res://images/button-g3d09a2d31_640.png" type="Texture" id=6]
+[ext_resource path="res://images/Button-PNG-Image.png" type="Texture" id=7]
 
 [sub_resource type="DynamicFont" id=1]
 size = 50
@@ -41,6 +43,28 @@ show_behind_parent = true
 position = Vector2( 513.5, 299.5 )
 scale = Vector2( 0.151886, 0.223174 )
 texture = ExtResource( 2 )
+
+[node name="TextureButton" type="TextureButton" parent="."]
+margin_left = 330.0
+margin_top = 416.0
+margin_right = 706.0
+margin_bottom = 568.0
+texture_normal = ExtResource( 6 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton2" type="TextureButton" parent="."]
+margin_left = 417.0
+margin_top = 286.0
+margin_right = 587.0
+margin_bottom = 377.0
+texture_normal = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchor_left = -0.5

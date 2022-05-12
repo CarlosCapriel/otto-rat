@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Escenas/Menu.gd" type="Script" id=1]
 [ext_resource path="res://images/Otto.png" type="Texture" id=2]
 [ext_resource path="res://TIEWING.TTF" type="DynamicFontData" id=3]
 [ext_resource path="res://sounds/Intro Theme.mp3" type="AudioStream" id=4]
+[ext_resource path="res://images/button-g3d09a2d31_640.png" type="Texture" id=5]
+[ext_resource path="res://images/Button-PNG-Image.png" type="Texture" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 50
@@ -35,15 +37,40 @@ position = Vector2( 513.75, 300.437 )
 scale = Vector2( 0.10325, 0.108554 )
 texture = ExtResource( 2 )
 
+[node name="TextureButton" type="TextureButton" parent="."]
+margin_left = 272.0
+margin_top = 408.0
+margin_right = 432.0
+margin_bottom = 560.0
+texture_normal = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton2" type="TextureButton" parent="."]
+margin_left = 590.0
+margin_top = 437.0
+margin_right = 753.0
+margin_bottom = 528.0
+texture_normal = ExtResource( 6 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchor_left = -0.5
 anchor_top = 1.0
 anchor_right = 0.408
 anchor_bottom = 1.0
-margin_left = 799.0
-margin_top = -152.0
-margin_right = 21.208
-margin_bottom = -89.0
+margin_left = 786.0
+margin_top = -154.0
+margin_right = 8.20801
+margin_bottom = -91.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="BotonInicio" type="Button" parent="VBoxContainer"]
 margin_right = 159.0
@@ -59,6 +86,8 @@ anchor_left = 0.542969
 anchor_top = 0.745
 anchor_right = 0.704102
 anchor_bottom = 0.85
+margin_left = 29.656
+margin_right = 29.656
 __meta__ = {
 "_edit_use_anchors_": true
 }
