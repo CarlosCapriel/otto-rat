@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://sounds/GameOver.wav" type="AudioStream" id=1]
 [ext_resource path="res://Escenas/GameOver.gd" type="Script" id=2]
 [ext_resource path="res://background/jardin/Gameover.jpg" type="Texture" id=3]
 [ext_resource path="res://TIEWING.TTF" type="DynamicFontData" id=4]
+[ext_resource path="res://images/button-g3d09a2d31_640.png" type="Texture" id=5]
+[ext_resource path="res://images/btn-moradito.png" type="Texture" id=6]
 
 [sub_resource type="DynamicFont" id=3]
 size = 40
@@ -33,6 +35,28 @@ position = Vector2( 1, -1 )
 scale = Vector2( 0.171, 0.204 )
 texture = ExtResource( 3 )
 centered = false
+
+[node name="TextureButton" type="TextureButton" parent="."]
+margin_left = 199.0
+margin_top = 381.0
+margin_right = 518.0
+margin_bottom = 519.0
+texture_normal = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton2" type="TextureButton" parent="."]
+margin_left = 587.0
+margin_top = 404.0
+margin_right = 900.0
+margin_bottom = 482.0
+texture_normal = ExtResource( 6 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 margin_left = 220.0
