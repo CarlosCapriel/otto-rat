@@ -1,0 +1,106 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Escenas/Menu.gd" type="Script" id=1]
+[ext_resource path="res://background/cocina/140Z_2106.w026.n002.539B.p1.539.jpg" type="Texture" id=2]
+[ext_resource path="res://TIEWING.TTF" type="DynamicFontData" id=3]
+[ext_resource path="res://sounds/Iceland Theme.mp3" type="AudioStream" id=4]
+[ext_resource path="res://Brightly Crush Shine.otf" type="DynamicFontData" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 50
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 50
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 60
+outline_size = 4
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 5 )
+
+[node name="Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -2.0
+margin_right = 6.0
+margin_bottom = 4.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Otto" type="Sprite" parent="."]
+show_behind_parent = true
+position = Vector2( 513.5, 299.5 )
+scale = Vector2( 0.151886, 0.223174 )
+texture = ExtResource( 2 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = -0.5
+anchor_top = 1.0
+anchor_right = 0.408
+anchor_bottom = 1.0
+margin_left = 866.0
+margin_top = -144.0
+margin_right = 262.944
+margin_bottom = -81.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BotonInicio" type="Button" parent="VBoxContainer"]
+margin_right = 334.0
+margin_bottom = 63.0
+rect_pivot_offset = Vector2( -303, 58 )
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 1 )
+text = "Jugar De Nuevo"
+flat = true
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+anchor_left = 0.542969
+anchor_top = 0.745
+anchor_right = 0.704102
+anchor_bottom = 0.85
+margin_left = -140.344
+margin_top = -149.98
+margin_right = -140.344
+margin_bottom = -149.98
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="BotonSalir" type="Button" parent="VBoxContainer2"]
+margin_right = 166.0
+margin_bottom = 63.0
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 2 )
+text = "Salir"
+flat = true
+
+[node name="IntroTheme" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 213.0
+margin_top = 68.0
+margin_right = 795.0
+margin_bottom = 187.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "¡¡Game 
+Complete!!"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="VBoxContainer/BotonInicio" to="." method="_on_BotonInicio_pressed"]
+[connection signal="pressed" from="VBoxContainer2/BotonSalir" to="." method="_on_BotonSalir_pressed"]
