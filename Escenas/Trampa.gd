@@ -13,12 +13,16 @@ func _ready():
 	connect("area_entered",self, "desaparecer")
 	#connect("area_entered",self, "desaparecer")#
 func generateRandomOperation(dificulty):
-	var number1 = 0.0
+	var number1 : float
+	number1 = 0.0
 	
-	var number2 = 0.0
-	var number3 = 0.0
+	var number2 : float
+	number2 = 0.0
+	var number3 : float
+	number3 = 0.0 
 	var operator = ""
-	var total  = 0.0
+	var total  : float
+	total = 0.0 
 	
 	
 	number1 = generateRandomNumber(dificulty)
@@ -34,8 +38,7 @@ func generateRandomOperation(dificulty):
 			total = number1 - number2 - number3
 		"*":
 			total = number1 * number2 * number3
-		"/":
-			total = number1 / number2 / number3
+		
 	
 	$Resultado.text = str(total)
 
@@ -44,7 +47,7 @@ func generateRandomNumber(dificulty):
 	return number 
 
 func generateRandomOperator(dificulty):
-	var operators = ["+","-","*","/"]
+	var operators = ["+","-","*"]
 	match dificulty:
 		4:
 			return operators[randi() % 2]
@@ -58,8 +61,9 @@ func generateRandomOperator(dificulty):
 #	pass
 
 
-func _on_queso_body_entered(body):
+
+
+
+
+func _on_Trampa_body_entered(body):
 	queue_free()
-
-
-
