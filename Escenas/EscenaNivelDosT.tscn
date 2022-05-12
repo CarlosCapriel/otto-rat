@@ -1,13 +1,14 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Escenas/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://background/cocina/puertaCocina.png" type="Texture" id=2]
 [ext_resource path="res://background/cocina/cocina.png" type="Texture" id=3]
 [ext_resource path="res://Escenas/queso.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Escenas/quesoInco.tscn" type="PackedScene" id=5]
-[ext_resource path="res://sounds/Mushroom Theme.mp3" type="AudioStream" id=6]
+[ext_resource path="res://sounds/Dungeon Theme.mp3" type="AudioStream" id=6]
 [ext_resource path="res://Escenas/casita.gd" type="Script" id=7]
 [ext_resource path="res://Escenas/BarraVida.tscn" type="PackedScene" id=8]
+[ext_resource path="res://background/cocina/140Z_2106.w026.n002.539B.p1.539.jpg" type="Texture" id=9]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
@@ -20,7 +21,7 @@ func _ready():
 
 
 func _on_puertita_body_entered(body):
-	get_tree().change_scene(\"res://Escenas/EscenaNivelTres.tscn\")
+	get_tree().change_scene(\"res://Escenas/Final.tscn\")
 "
 
 [sub_resource type="RectangleShape2D" id=4]
@@ -34,6 +35,11 @@ script = SubResource( 1 )
 position = Vector2( 1232, 767.25 )
 scale = Vector2( 1.99428, 2.17357 )
 texture = ExtResource( 3 )
+
+[node name="Final" type="Sprite" parent="."]
+position = Vector2( 4533, 761.5 )
+scale = Vector2( 0.464153, 0.554024 )
+texture = ExtResource( 9 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( -441, 877 )
