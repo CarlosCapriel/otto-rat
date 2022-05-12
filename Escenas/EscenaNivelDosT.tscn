@@ -8,7 +8,7 @@
 [ext_resource path="res://sounds/Dungeon Theme.mp3" type="AudioStream" id=6]
 [ext_resource path="res://Escenas/casita.gd" type="Script" id=7]
 [ext_resource path="res://Escenas/BarraVida.tscn" type="PackedScene" id=8]
-[ext_resource path="res://background/cocina/140Z_2106.w026.n002.539B.p1.539.jpg" type="Texture" id=9]
+[ext_resource path="res://background/cocina/5533063.jpg" type="Texture" id=9]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
@@ -21,7 +21,7 @@ func _ready():
 
 
 func _on_puertita_body_entered(body):
-	get_tree().change_scene(\"res://Escenas/Final.tscn\")
+	get_tree().change_scene(\"res://Escenas/EscenaNivelTres.tscn\")
 "
 
 [sub_resource type="RectangleShape2D" id=4]
@@ -37,8 +37,8 @@ scale = Vector2( 1.99428, 2.17357 )
 texture = ExtResource( 3 )
 
 [node name="Final" type="Sprite" parent="."]
-position = Vector2( 4533, 761.5 )
-scale = Vector2( 0.464153, 0.554024 )
+position = Vector2( 4274, 767.283 )
+scale = Vector2( 0.472727, 0.440208 )
 texture = ExtResource( 9 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]

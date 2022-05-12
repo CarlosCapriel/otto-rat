@@ -2,7 +2,7 @@ extends Area2D
 
 func _ready():
 	randomize()
-	generateRandomOperation(10)
+	generateRandomOperation(4)
 	connect("area_entered",self, "desaparecer")# Replace with function body.
 
 func generateRandomOperation(dificulty):

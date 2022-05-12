@@ -1,0 +1,113 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Escenas/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://background/cocina/puertaCocina.png" type="Texture" id=2]
+[ext_resource path="res://background/cocina/5533063.jpg" type="Texture" id=3]
+[ext_resource path="res://Escenas/Trampa.tscn" type="PackedScene" id=4]
+[ext_resource path="res://sounds/Grasslands Theme.mp3" type="AudioStream" id=5]
+[ext_resource path="res://Escenas/TrampaIn.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Escenas/casita.gd" type="Script" id=7]
+[ext_resource path="res://Escenas/BarraVida.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Escenas/TrampaDivi.tscn" type="PackedScene" id=9]
+[ext_resource path="res://background/cocina/140Z_2106.w026.n002.539B.p1.539.jpg" type="Texture" id=10]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Node2D
+
+func _ready():
+	$MusicLevel.play()
+
+
+
+
+
+func _on_puertita_body_entered(body):
+	get_tree().change_scene(\"res://Escenas/Final.tscn\")
+"
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 229.168, 222.154 )
+
+[node name="Mundo" type="Node2D"]
+position = Vector2( 1, 0 )
+script = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 1446, 729.625 )
+scale = Vector2( 0.801818, 0.42023 )
+texture = ExtResource( 3 )
+
+[node name="fin" type="Sprite" parent="."]
+position = Vector2( 5548, 715.75 )
+scale = Vector2( 0.566254, 0.537444 )
+texture = ExtResource( 10 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( -692, 838 )
+collision_layer = 2
+collision_mask = 15
+
+[node name="MusicLevel" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+
+[node name="puertita" type="Area2D" parent="."]
+position = Vector2( 6, 129 )
+script = ExtResource( 7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="puertita"]
+position = Vector2( 3165.69, 228.791 )
+rotation = -0.0251649
+shape = SubResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="puertita"]
+visible = false
+position = Vector2( 3349, -1653 )
+scale = Vector2( 0.48574, 0.546607 )
+texture = ExtResource( 2 )
+
+[node name="Trampa" parent="." instance=ExtResource( 4 )]
+position = Vector2( -612, 828 )
+
+[node name="Trampa2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 2947, 465 )
+
+[node name="Trampa4" parent="." instance=ExtResource( 4 )]
+position = Vector2( 800, 814 )
+
+[node name="TrampaDivi" parent="." instance=ExtResource( 9 )]
+position = Vector2( 2503, 743 )
+
+[node name="TrampaDivi2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1306, 1071 )
+
+[node name="TrampaDivi3" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1928, 857 )
+
+[node name="TrampaDivi4" parent="." instance=ExtResource( 9 )]
+position = Vector2( -1, 1077 )
+
+[node name="TrampaIn" parent="." instance=ExtResource( 6 )]
+position = Vector2( -548, 1084 )
+
+[node name="TrampaIn2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 279, 772 )
+
+[node name="TrampaIn3" parent="." instance=ExtResource( 6 )]
+position = Vector2( 754, 1082 )
+
+[node name="TrampaIn4" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1543, 803 )
+
+[node name="TrampaIn5" parent="." instance=ExtResource( 6 )]
+position = Vector2( 3007, 818 )
+
+[node name="TrampaIn7" parent="." instance=ExtResource( 6 )]
+position = Vector2( 2570, 357 )
+
+[node name="TrampaIn6" parent="." instance=ExtResource( 6 )]
+position = Vector2( 2207, 1100 )
+
+[node name="BarraVida" parent="." instance=ExtResource( 8 )]
+player_node = NodePath("../Player")
+
+[connection signal="body_entered" from="puertita" to="." method="_on_puertita_body_entered"]
